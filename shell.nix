@@ -34,12 +34,13 @@ in pkgs.mkShell {
     pkgs.nsis
     pkgs.imagemagick
     pkgs.wine64
+    pkgs.pipewire
   ] ++ openglLibs;
 
   shellHook = ''
-    export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath openglLibs}:$LD_LIBRARY_PATH
-    export SDL_AUDIODRIVER=pipewire
-    export PULSE_SERVER=unix:${pkgs.runtimeShell}/run/user/$(id -u)/pulse/native
+    export SDL_AUDIODRIVER=pulse
+    export PULSE_SERVER=unix:/run/user/$(id -u)/pulse/native
+    export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath (openglLibs ++ [ pkgs.libpulseaudio ])}:$LD_LIBRARY_PATH
   '';
 
 }

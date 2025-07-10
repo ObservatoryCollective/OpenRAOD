@@ -1,6 +1,6 @@
 Metadata:
 	Title: OpenRAOD
-	Version: ./out/
+	Version: ./out
 	Website: https://www.openra.net
 	WebIcon32: icon32.png
 	WindowTitle: mod-windowtitle
@@ -70,7 +70,7 @@ FileSystem: ContentInstallerFileSystem
 
 MapFolders:
 	ra|maps: System
-	~^SupportDir|maps/ra/./out/: User
+	~^SupportDir|maps/ra/./out: User
 
 Rules:
 	ra|rules/misc.yaml
