@@ -1,0 +1,269 @@
+factengineer:
+    Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Selectable:
+		Bounds: 48,48
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~disabled
+		Description: Disabled
+	ProvidesPrerequisite@factengine:
+		Factions: factengine
+		Prerequisite: structures.factengine
+	Health:
+		HP: 150000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Production:
+		Produces: Building, Defense
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Mr. Engineerington
+	Sellable:
+		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
+	ProductionBar@Building:
+		ProductionType: Building
+    ProductionBar@Defense:
+		ProductionType: Defense
+		Color: 8A8A8A
+	BaseProvider:
+		Range: 16c0
+	Power:
+		Amount: 0
+    Mobile:
+		Speed: 45
+		Locomotor: foot
+    RenderSprites:
+	    Image: gnrl
+    MustBeDestroyed:
+		RequiredForShortGame: True
+    GpsDot:
+		String: Structure
+    RepairableBuilding:
+		RepairStep: 700
+		PlayerExperience: 25
+		RepairingNotification: Repairing
+    UpdatesPlayerStatistics:
+	GivesBuildableArea:
+		AreaTypes: building, fake
+    ProximityExternalCondition:
+        Condition: EngineHere
+        Range: 2c0
+
+RepairBot2:
+    Inherits@1: ^ExistsInWorld
+	Inherits@2: ^GainsExperience
+	Inherits@3: ^InfantryExperienceHospitalOverrides
+	Inherits@4: ^SpriteActor
+	Inherits@bounty: ^GlobalBounty
+	Inherits@selection: ^SelectableCombatUnit
+	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@selection: ^SelectableSupportUnit
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 60
+		Prerequisites: ~techlevel.infonly, ~infantry.factengine
+		Description: Repairs Structures.
+    Selectable:
+		Bounds: 18,20,0,-6
+		DecorationBounds: 12,18,0,-8
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Repair Android
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Passenger:
+		CustomPipType: yellow
+	RepairsBridges:
+	Armament:
+		Weapon: Repair2
+		TargetRelationships: Ally
+    AutoTarget:
+		InitialStance: AttackAnything
+    AutoTargetPriority@DEFAULT:
+		ValidTargets: GroundActor
+    RevealsShroud@GAPGEN:
+		Range: 6c0
+		Type: GroundPosition
+    WithInfantryBody:
+    QuantizeFacingsFromSequence:
+		Sequence: stand
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: DefaultDeath
+    WithDeathAnimation:
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+			FireDeath: 5
+			ElectricityDeath: 6
+		CrushedSequence: die-crushed
+    HiddenUnderFog:
+    DetectCloaked:
+		CloakTypes: Cloak
+		Range: 1c0
+    Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: GroundActor, Infantry, Disguise
+	Targetable@HEAL:
+		RequiresCondition: !parachute && damaged
+		TargetTypes: Heal
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+
+    Mobile:
+        Speed: 56
+		AlwaysTurnInPlace: true
+		Locomotor: foot
+    Health:
+		HP: 2500
+	Armor:
+		Type: Heavy
+    AttackFrontal:
+    AutoTarget:
+        ScanRadius: 10
+    HitShape:
+		Type: Circle
+			Radius: 128
+    RenderSprites:
+	    Image: e6
+        Scale: 0.5
+        
+AmmoBot:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~techlevel.infonly, ~infantry.factengine
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: E1
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Ammo bot
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: M1Carbine
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Vulcan
+		MuzzleSequence: garrison-muzzle
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+    ProximityExternalCondition:
+        Condition: EngineHere
+        Range: 2c0
+    Armor:
+		Type: Light
+     RenderSprites:
+	    Image: e1
+        Scale: 0.5
+        
+BulletBot:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~barracks, ~techlevel.infonly, ~structures.factengine
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: E1
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Rifle Bot
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 7000
+	Armament@PRIMARY:
+		Weapon: Vulcan2
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Vulcan2
+		MuzzleSequence: garrison-muzzle
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+     RenderSprites:
+	    Image: e1
+        Scale: 0.75
+        
+RocketBot:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~barracks, ~techlevel.infonly, ~structures.factengine
+		Description: Anti-tank/Anti-aircraft infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Selectable:
+		Class: E3
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Rocket Bot
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 4500
+	Armament@PRIMARY:
+		Weapon: RedEye2
+		LocalOffset: 0,0,555
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: Dragon2
+		LocalOffset: 0,0,555
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Dragon2
+	TakeCover:
+		ProneOffset: 384,0,-395
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	AutoTarget:
+		ScanRadius: 5
+    RenderSprites:
+	    Image: e3
+        Scale: 0.5

@@ -1,0 +1,40 @@
+PistolGlock:
+	Inherits: ^LightMG
+	ReloadDelay: 7
+	Range: 3c0
+	Report: gun27.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 500
+		Versus:
+			None: 100
+			Wood: 5
+			Light: 1
+			Heavy: 1
+			Concrete: 1
+	Warhead@2Eff: CreateEffect
+		Inaccuracy: 64
+	Warhead@3EffWater: CreateEffect
+		Inaccuracy: 64
+        
+FlareGun:
+    Inherits: ^FireWeapon
+	Burst: 5
+	BurstDelays: 20
+    ReloadDelay: 65
+	Range: 10c0
+	Projectile: Bullet
+		Speed: 250
+        Blockable: false
+        Shadow: True
+		TrailImage: fb2
+		Image: FB1
+        Inaccuracy: 1c512
+	Warhead@1Dam: SpreadDamage
+        Spread: 1c0
+		Damage: 6000
+		Versus:
+			None: 45
+			Wood: 40
+			Light: 75
+			Heavy: 65
+			Concrete: 35

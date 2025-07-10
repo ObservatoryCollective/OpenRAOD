@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # OpenRA Mod SDK packaging script for macOS
 #
 # The application bundles will be signed if the following environment variables are defined:

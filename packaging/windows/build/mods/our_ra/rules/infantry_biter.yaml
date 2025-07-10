@@ -1,0 +1,454 @@
+ExpandSmall:
+    Inherits: ^Infantry
+    Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Small Expander
+		GenericName: Ant
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge
+		Description: wIrradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 75000
+	Mobile:
+		Speed: 99
+		TurnSpeed: 48
+		Locomotor: swimst
+	-Crushable:
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: mandible
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 469
+    Transforms:
+        IntoActor: biterhive
+        Offset: -1,-1
+        Facing: 384
+        TransformSounds: placbldg.aud, build5.aud
+        NoTransformNotification: BuildingCannotPlaceAudio
+    MustBeDestroyed:
+        RequiredForShortGame: true
+    	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability
+    	AttackFrontal:
+    RenderSprites:
+		Image: Ant
+        
+        
+SmallBiter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Small Biter
+		GenericName: Small Biter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 16000
+	Mobile:
+		Speed: 99
+		TurnSpeed: 48
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: smallbiter
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 367
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 0.8
+
+MediumBiter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Medium Biter
+		GenericName: Medium Biter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, notsmallnest
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 89
+		TurnSpeed: 45
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: mediumbiter
+    Armor:
+		Type: Light
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 563
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 1.2
+        
+LargeBiter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Large Biter
+		GenericName: Large Biter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 69000
+	Mobile:
+		Speed: 80
+		TurnSpeed: 45
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: largebiter
+    Armor:
+		Type: Heavy
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 750
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 1.6
+        
+ThiccBiter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Behemoth Biter
+		GenericName: Behemoth Biter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge, btek
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 120000
+	Mobile:
+		Speed: 70
+		TurnSpeed: 45
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: thiccbiter
+    Armor:
+		Type: Heavy
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 750
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 2.4
+        
+SmallSpitter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    RevealsShroud:
+		Range: 6c0
+	Valued:
+		Cost: 875
+	Tooltip:
+		Name: Small Spitter
+		GenericName: Small Spitter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestmedium
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 14000
+	Mobile:
+		Speed: 99
+		TurnSpeed: 48
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: smallspitter
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 367
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 0.8
+
+MediumSpitter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    RevealsShroud:
+		Range: 8c0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Medium Spitter
+		GenericName: Medium Spitter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 89
+		TurnSpeed: 45
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: mediumspitter
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 563
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 1.2
+        
+LargeSpitter:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    RevealsShroud:
+		Range: 10c0
+	Valued:
+		Cost: 1550
+	Tooltip:
+		Name: Large Spitter
+		GenericName: Large Spitter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: BiterClass
+		BuildPaletteOrder: 1954
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge, btek
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
+	Selectable:
+		Bounds: 24,24,0,-5
+		DecorationBounds: 30,30,0,-2
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 80
+		TurnSpeed: 45
+		Locomotor: lighttracked
+    GrantConditionWhileAiming:
+		Condition: run
+    SpeedMultiplier:
+		Modifier: 200
+		RequiresCondition: run
+	-Crushable:
+	AutoTarget:
+		InitialStance: AttackAnything
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: largespitter
+    Armor:
+		Type: Light
+	Targetable:
+		TargetTypes: GroundActor, Infantry, Disguise
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 750
+    Wanders:
+        MinMoveDelay: 1
+        MaxMoveDelay: 69
+        WanderMoveRadius: 2
+        
+    RenderSprites:
+		Image: Ant
+        Scale: 1.6

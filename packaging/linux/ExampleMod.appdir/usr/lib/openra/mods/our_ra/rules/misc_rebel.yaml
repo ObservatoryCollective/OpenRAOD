@@ -1,0 +1,42 @@
+BEZOSCRATE:
+	Inherits: ^Crate
+    Crate:
+		Lifetime: 9999
+	GiveCashCrateAction:
+		Amount: 2000
+		SelectionShares: 30
+		UseCashTick: true
+    ExplodeCrateAction@boom:
+		Weapon: MiniNuke
+		SelectionShares: 70
+    GiveUnitCrateAction@squadlight:
+		SelectionShares: 30
+		Units: vest, sniper, spy.england
+		ValidFactions: allies, england, france, germany, soviet, russia, ukraine, mideast, siberia, canada, rebel
+    GiveUnitCrateAction@squadheavy:
+		SelectionShares: 10
+		Units: jeep, katyusha, ctnk, qtnk
+		ValidFactions: allies, england, france, germany, soviet, russia, ukraine, mideast, siberia, canada, rebel
+    GiveUnitCrateAction@squadheavy:
+		SelectionShares: 20
+		Units: jeep, qtnk
+		ValidFactions: allies, england, france, germany, soviet, russia, ukraine, mideast, siberia, canada, rebel
+    GiveUnitCrateAction@squadheavy:
+		SelectionShares: 20
+		Units: jeep, ctnk
+		ValidFactions: allies, england, france, germany, soviet, russia, ukraine, mideast, siberia, canada, rebel
+    GiveUnitCrateAction@squadheavy:
+		SelectionShares: 25
+		Units: jeep, katyusha
+		ValidFactions: allies, england, france, germany, soviet, russia, ukraine, mideast, siberia, canada, rebel
+	GiveMcvCrateAction:
+		SelectionShares: 0
+		NoBaseSelectionShares: 100
+		Units: mcv
+
+camera.flare:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+    RevealsShroud:
+		Range: 10c0

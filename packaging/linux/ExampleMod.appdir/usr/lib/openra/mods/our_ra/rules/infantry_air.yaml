@@ -1,0 +1,60 @@
+BRIKWater:
+    Inherits: ^Building
+	Selectable:
+		Bounds: 72,72
+	Building:
+		Footprint: === === === ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+        TerrainTypes: Clear,Road, Beach, Water
+	Health:
+		HP: 150000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Production:
+		Produces: Building, Defense
+	Valued:
+		Cost: 1
+	Tooltip:
+		Name: waterfcill?
+	BaseBuilding:
+	Sellable:
+		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Defense:
+		ProductionType: Defense
+		Color: 8A8A8A
+	BaseProvider:
+		PauseOnCondition: being-captured
+		Range: 16c0
+	WithBuildingBib:
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete && !chrono-vortex
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@buildingname:
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+    Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 30
+		Prerequisites: fact, ~techlevel.medium
+		Description: Stop units and blocks enemy fire.
+    Immobile:
+    ChangesTerrain:
+        TerrainType: Water
+    RenderSprites:
+		Image: fact

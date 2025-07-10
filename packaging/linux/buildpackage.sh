@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # OpenRA packaging script for Linux (AppImage)
 set -e
 
