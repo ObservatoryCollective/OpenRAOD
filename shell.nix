@@ -1,8 +1,6 @@
-# shell.nix
 let
-  # We pin to a specific nixpkgs commit for reproducibility.
-  # Last updated: 2024-04-29. Check for new commits at https://status.nixos.org.
   pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/cf8cc1201be8bc71b7cbbbdaf349b22f4f99c7ae.tar.gz") {};
+
   openglLibs = with pkgs; [
     mesa
     libGL
@@ -16,14 +14,21 @@ let
     xorg.libXinerama
     xorg.libXxf86vm
   ];
+
+  # ✅ This creates a clean derivation that provides `liblua51.so`
+  lua51CompatLib = pkgs.runCommand "lua51-shim" {
+    nativeBuildInputs = [];
+  } ''
+    mkdir -p $out/lib
+    ln -s ${pkgs.lua5_1}/lib/liblua.so.5.1 $out/lib/liblua51.so
+  '';
+
 in pkgs.mkShell {
   packages = [
     (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
-      # select Python packages here
       pandas
       requests
     ]))
-    #pkgs.mono
     pkgs.unzip
     pkgs.dotnet-sdk_6
     pkgs.dotnet-runtime_6
@@ -41,10 +46,11 @@ in pkgs.mkShell {
   shellHook = ''
     export SDL_AUDIODRIVER=pulse
     export PULSE_SERVER=unix:/run/user/$(id -u)/pulse/native
+
     export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath (openglLibs ++ [
       pkgs.libpulseaudio
       pkgs.lua5_1
-   ])}:$LD_LIBRARY_PATH
+      lua51CompatLib
+    ])}:$LD_LIBRARY_PATH
   '';
-
 }
