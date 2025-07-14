@@ -7,12 +7,14 @@ bushbomb:
 
 e1ak:
 	Inherits: e1
-	icon: e1akicon.shp
+	icon:
+		Filename: e1akicon.shp
 
 vest:
-	Inherits: spy
+	Inherits: thf
 	icon:
 		Filename: vesticon.shp
+
 
 katyusha:
 	Inherits: v2rl

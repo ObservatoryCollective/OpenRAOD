@@ -82,8 +82,6 @@ VEST:
 		ValidDamageStates: Critical
 	Crushable:
 		WarnProbability: 50
-	RenderSprites:
-		Image: THF
 
 SNIPER:
 	Inherits: ^Soldier

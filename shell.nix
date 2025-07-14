@@ -35,12 +35,16 @@ in pkgs.mkShell {
     pkgs.imagemagick
     pkgs.wine64
     pkgs.pipewire
+    pkgs.lua5_1
   ] ++ openglLibs;
 
   shellHook = ''
     export SDL_AUDIODRIVER=pulse
     export PULSE_SERVER=unix:/run/user/$(id -u)/pulse/native
-    export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath (openglLibs ++ [ pkgs.libpulseaudio ])}:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath (openglLibs ++ [
+      pkgs.libpulseaudio
+      pkgs.lua5_1
+   ])}:$LD_LIBRARY_PATH
   '';
 
 }

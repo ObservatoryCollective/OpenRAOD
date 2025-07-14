@@ -70,7 +70,7 @@ BUSHBOMB:
 	GrantConditionOnDeploy:
 		DeployedCondition: triggered
 	KillsSelf:
-		RequiresCondition: invulnerability || triggered
+		RequiresCondition: triggered
 
 BUSHBOMB.Husk:
 	Inherits: ^BasicHusk
@@ -115,7 +115,7 @@ BUSHBOMB.Husk:
 		Range: 11c0
 		Type: GroundPosition
 	RenderSprites:
-		Image: yak
+		Image: mig
 
 
 
