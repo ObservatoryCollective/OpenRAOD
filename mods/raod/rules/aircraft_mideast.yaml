@@ -6,11 +6,11 @@ BUSHBOMB:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 50
 		Prerequisites: ~afld, stek, ~techlevel.high, ~aircraft.mideast
-		Description: Demo-Truck but Plane, Grown on Bushes
+		Description: actor-demo-plane.description
 	Valued:
-		Cost: 1700
+		Cost: 1900
 	Tooltip:
-		Name: Suicide Bomber
+		Name: actor-demo-plane.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -118,78 +118,23 @@ BUSHBOMB.Husk:
 		Image: mig
 
 
-
-YAYK:
-	Inherits: ^Plane
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+YAYK2:
+	Inherits: YAK
+	RenderSprites:
+		Image: yayk
 	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Plane
-		BuildPaletteOrder: 30
 		Prerequisites: ~afld, ~techlevel.medium, stek, ~aircraft.mideast
-		Description: Attack Plane armed with\ndual machine guns.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
-	Valued:
-		Cost: 1750
+		Description: actor-yayk.description
 	Tooltip:
-		Name: Yay-K47 Attack Plane
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Health:
-		HP: 6000
-	RevealsShroud:
-		MinRange: 9c0
-		Range: 11c0
-		Type: GroundPosition
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 9c0
-		Type: GroundPosition
+		Name: actor-yayk.name
+	-Armament
 	Armament@PRIMARY:
-		Weapon: ChainGun.YayK
-		LocalOffset: 256,-213,0
+		Weapon: Chaingun.Yayk
+		LocalOffset: 256,-213,0, 256,213,0
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo
-	Armament@SECONDARY:
-		Name: secondary
-		Weapon: ChainGun.Yak
-		LocalOffset: 256,213,0
-		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
-	AttackAircraft:
-		FacingTolerance: 80
-		PersistentTargeting: false
-		OpportunityFire: False
-	Aircraft:
-		CruiseAltitude: 2560
-		TurnSpeed: 16
-		Speed: 178
-		RepulsionSpeed: 40
-		MaximumPitch: 56
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
-	AmmoPool:
-		Ammo: 36
-		ReloadDelay: 10
-		AmmoCondition: ammo
-	WithMuzzleOverlay:
-	Contrail:
-		Offset: -853,0,0
-	SpawnActorOnDeath:
-		Actor: YAK.Husk
-	LeavesTrails:
-		Offset: -853,0,0
-		Interval: 2
-		Image: smokey
-		MinDamage: Heavy
-	ProducibleWithLevel:
-		Prerequisites: aircraft.upgraded
-	Selectable:
-		DecorationBounds: 30,28,0,2
 	Rearmable:
 		RearmActors: afld, afld.ukraine, afld.mideast
-	WithAmmoPipsDecoration:
-		Position: BottomLeft
-		Margin: 4, 3
-		RequiresSelection: true
-		PipCount: 6
+	AmmoPool:
+		Ammo: 25
+

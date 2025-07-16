@@ -313,19 +313,21 @@ KatyushaMis:
 
 ChainGun.YayK:
 	Inherits: ^HeavyMG
-	ReloadDelay: 2
+	Burst: 8
+	BurstDelays: 1
+	ReloadDelay: 15
 	Range: 7c0
 	MinRange: 3c0
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 3500
+		Damage: 4100
 		Versus:
 			None: 150
-			Wood: 52
-			Light: 65
-			Heavy: 33
-			Concrete: 26
+			Wood: 55
+			Light: 70
+			Heavy: 30
+			Concrete: 20
 
 
 

@@ -130,10 +130,10 @@
 		Side: Soviet
 		Description: faction-ukraine.description
 	Faction@mideast:
-		Name: Middle East
+		Name: faction-mideast.name
 		InternalName: mideast
 		Side: Soviet
-		Description: Middle East: Demolitions\nSpecial Ability: HAHA BOMB\nSpecial Unit: 9/11
+		Description: faction-mideast.description
 	Faction@random:
 		Name: faction-random.name
 		InternalName: Random
