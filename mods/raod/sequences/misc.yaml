@@ -1,0 +1,55 @@
+icon:
+	abomb:
+		Filename: atomicon.shp
+	invuln:
+		Filename: infxicon.shp
+	chrono:
+		Filename: warpicon.shp
+	spyplane:
+		Filename: smigicon.shp
+	paratroopers:
+		Filename: pinficon.shp
+	gps:
+		Filename: gpssicon.shp
+	parabombs:
+		Filename: pbmbicon.shp
+	sonar:
+		Filename: sonricon.shp
+	apacheicon:
+		Filename: apacheicon.shp
+
+beacon:
+	Defaults:
+		ZOffset: 2535
+	arrow:
+		Filename: mouse.shp
+		Start: 5
+		Offset: 1,-12
+	circles:
+		Filename: fpls.shp
+		Length: *
+		ZOffset: 2047
+	atomicon:
+		Filename: lores|atomicon.shp
+		Length: *
+		Offset: 0,-42
+	pbmbicon:
+		Filename: lores|pbmbicon.shp
+		Length: *
+		Offset: 0,-42
+	camicon:
+		Filename: lores|camicon.shp
+		Length: *
+		Offset: 0,-42
+	pinficon:
+		Filename: lores|pinficon.shp
+		Length: *
+		Offset: 0,-42
+	clock:
+		Filename: beaconclock.shp
+		Length: *
+		Offset: 0,-42
+	apachebox:
+		Filename: apachebox.shp
+		Length: *
+		Offset: 0,-42
