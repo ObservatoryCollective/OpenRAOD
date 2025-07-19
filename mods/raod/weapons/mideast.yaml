@@ -274,15 +274,15 @@ BombVest:
 	#	Duration: 10
 	#	FlashType: Nuke
 
-KatyushaMis:
+KatyushaMissle:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 120
 	Range: 12c0
 	MinRange: 5c0
 	Report: missile1.aud
 	-Projectile:
-    Burst: 10
-	BurstDelays: 2
+    Burst: 100
+	BurstDelays: 1
 	Projectile: Bullet
 		Speed: 300
 		Blockable: false
@@ -369,20 +369,20 @@ ApacheBomb:
 MinigunTank:
 	Inherits: ^Cannon
 	Burst: 20
-	BurstDelays: 0
-	ReloadDelay: 45
+	BurstDelays: 2
+	ReloadDelay: 65
 	Range: 4c768
 	Report: cannon2.aud
 	Projectile: InstantHit
 		Blockable: true
 	Warhead@1Dam: SpreadDamage
-		Damage: 2500
+		Damage: 1500
 		Spread: 276
 		Versus:
 			None: 250
 			Wood: 30
 			Light: 116
-			Heavy: 50
+			Heavy: 40
 			Concrete: 25
 	-Warhead@2Smu:
 	Warhead@2Eff: CreateEffect

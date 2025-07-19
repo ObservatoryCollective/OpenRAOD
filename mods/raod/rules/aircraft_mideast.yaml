@@ -138,3 +138,31 @@ YAYK2:
 	AmmoPool:
 		Ammo: 25
 
+
+HELI.Bomber:
+	Inherits: BADR
+	-ParaDrop:
+	-Cargo:
+	-MapEditorData:
+	AttackBomber:
+	AmmoPool:
+		Ammo: 1
+	Armament:
+		Weapon: ApacheBomb
+	RenderSprites:
+		Image: mh60
+	WithIdleOverlay@ROTORAIR:
+		Sequence: rotor
+		RequiresCondition: airborne
+	SpawnActorOnDeath:
+		Actor: MH60.Husk
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+		TrailWhileStationary: True
+		StationaryInterval: 3
+

@@ -103,6 +103,7 @@ Sequences:
 	ra|sequences/misc.yaml
 	ra|sequences/decorations.yaml
 	raod|sequences/mideast.yaml
+	raod|sequences/misc.yaml
 
 TileSets:
 	ra|tilesets/snow.yaml

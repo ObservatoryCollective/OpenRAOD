@@ -33,7 +33,9 @@ yayk:
 		Filename: yaykicon.shp
 
 guntnk:
-	Inherits: 4tnk
+	Inherits: 2tnk
+	Defaults:
+		Scale: 1.15
 	icon:
 		Filename: gaticon.shp
 

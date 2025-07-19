@@ -285,8 +285,7 @@ AFLD.Mideast:
 	AirstrikePower@parabombs:
 		OrderName: MidEastParabombs
 		Prerequisites: ~aircraft.mideast
-		Icon:
-			Filename: apachebomb.shp
+		Icon: apacheicon
 		ChargeInterval: 1500
 		Description: Apache Bombs
 		LongDesc: A squad of Apche Attack Helicopters drop parachuted\nbombs on your target.
@@ -297,7 +296,7 @@ AFLD.Mideast:
 		QuantizedFacings: 8
 		DisplayBeacon: true
 		BeaconPoster: apachebox
-		SquadSize: 1
+		SquadSize: 3
 		SquadOffset: 1792,1792,0
 		ArrowSequence: arrow
 		ClockSequence: clock
@@ -410,7 +409,7 @@ BARR:
 		RequiresPrerequisites: structures.ukraine
 		Prerequisite: infantry.ukraine
 	ProvidesPrerequisite@mideaststructure:
-		RequiresPrerequisite: structures.mideast
+		RequiresPrerequisites: structures.mideast
 		Prerequisite: infantry.mideast
 	Power:
 		Amount: -20
