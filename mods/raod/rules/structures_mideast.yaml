@@ -288,7 +288,7 @@ AFLD.Mideast:
 		Icon: apacheicon
 		ChargeInterval: 1500
 		Description: Apache Bombs
-		LongDesc: A squad of Apche Attack Helicopters drop parachuted\nbombs on your target.
+		#LongDesc: A squad of Apche Attack Helicopters drop parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
 		CameraActor: camera
 		CameraRemoveDelay: 75
@@ -310,7 +310,7 @@ AFLD.Mideast:
 		Icon: paratroopers
 		ChargeInterval: 9000
 		Description: Paratroopers Bomber
-		LongDesc: A Badger drops a squad of vest bombers\nanywhere on the map.
+		#LongDesc: A Badger drops a squad of vest bombers\nanywhere on the map.
 		DropItems: VEST,VEST,VEST
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
