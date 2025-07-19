@@ -296,7 +296,7 @@ AFLD.Mideast:
 		QuantizedFacings: 8
 		DisplayBeacon: true
 		BeaconPoster: apachebox
-		SquadSize: 3
+		SquadSize: 1
 		SquadOffset: 1792,1792,0
 		ArrowSequence: arrow
 		ClockSequence: clock

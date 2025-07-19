@@ -6,13 +6,13 @@ E1AK:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~barracks, ~techlevel.infonly, ~infantry.mideast
-		Description: General-purpose infantry.\n Very Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: actor-e1ak.description
 	Selectable:
 		Class: E1
 	Valued:
 		Cost: 400
 	Tooltip:
-		Name: AK47 Infantry
+		Name: actor-e1ak.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -40,13 +40,13 @@ VEST:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~barracks, ~techlevel.infonly, ~infantry.mideast, stek
-		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: actor-vest.description
 	Selectable:
 		Class: E1
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Bomber Vest
+		Name: actor-vest.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -88,7 +88,7 @@ SNIPER:
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Sniper
+		Name: actor-sniper.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -96,7 +96,7 @@ SNIPER:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~barracks, ~techlevel.infonly, ~infantry.mideast
-		Description: Elite sniper infantry unit.\nCan detect cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: actor-sniper.description
 	Health:
 		HP: 8000
 	Passenger:

@@ -4,11 +4,11 @@ KATYUSHA:
 		Queue: Vehicle
 		BuildPaletteOrder: 230
 		Prerequisites: ~vehicles.mideast, ~techlevel.high, stek
-		Description: Long-range rocket artillery.\n  Strong vs EVERYTHING.\n Needs to reload often
+		Description: actor-katyusha.description
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Katyusha
+		Name: actor-katyusha
 	Mobile:
 		Speed: 83
 	-Armament
@@ -23,11 +23,11 @@ GUNTNK:
 		Queue: Vehicle
 		BuildPaletteOrder: 120
 		Prerequisites: ~vehicles.mideast, ~techlevel.low, fix
-		Description: Fast tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
+		Description: actor-guntnk.description
 	Valued:
 		Cost: 2050
 	Tooltip:
-		Name: Gattling Tank
+		Name: actor-guntnk.name
 		GenericName: Tank
 	Health:
 		HP: 75000
