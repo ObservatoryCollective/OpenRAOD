@@ -127,7 +127,6 @@ SNIPER:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	-MustBeDestroyed:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
     Mobile:
