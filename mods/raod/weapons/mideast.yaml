@@ -281,7 +281,7 @@ KatyushaMissle:
 	MinRange: 5c0
 	Report: missile1.aud
 	-Projectile:
-    Burst: 100
+    Burst: 10
 	BurstDelays: 1
 	Projectile: Bullet
 		Speed: 300
